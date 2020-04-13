@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!------------------------------------------ ESTILOS ------------------------------------------->
+
+    <link rel="stylesheet" href="css/web/web_style.css">
+    <link rel="stylesheet" href="css/web/add-ons.css">
+    <link rel="stylesheet" href="css/web/ranking.css">
+    <link rel="stylesheet" href="css/development/dev_style.css">
+    <link rel="stylesheet" href="css/mobile/buttons.css">
+    <link rel="stylesheet" href="css/mobile/mobile_game.css">
+    <link rel="stylesheet" href="css/game/score_bar.css">
+    <link rel="stylesheet" href="css/game/game_style.css">
+    <link rel="stylesheet" href="css/game/game_leveler.css">
+
+
+    <!------------------------------------- EFECTOS DE SONIDO -------------------------------------->
+    <audio id="SFX_POP" type="audio/mp3" src="media/sounds/SFX_POP.mp3" preload="auto"></audio>
+    <audio id="SFX_STEP" type="audio/mp3" src="media/sounds/SFX_STEP.mp3" preload="auto"></audio>
+    <audio id="SFX_MOVE" type="audio/mp3" src="media/sounds/SFX_MOVE.mp3" preload="auto"></audio>
+    <audio id="SFX_ROTATE" type="audio/mp3" src="media/sounds/SFX_ROTATE.mp3" preload="auto"></audio>
+    <audio id="SFX_ACCELERATE" type="audio/mp3" src="media/sounds/SFX_ACCELERATE.mp3" preload="auto"></audio>
+    <audio id="SFX_DROP" type="audio/mp3" src="media/sounds/SFX_DROP.mp3" preload="auto"></audio>
+    <audio id="SFX_CRASH" type="audio/mp3" src="media/sounds/SFX_CRASH.mp3" preload="auto"></audio>
+    <audio id="SFX_ROW" type="audio/mp3" src="media/sounds/SFX_ROW.mp3" preload="auto"></audio>
+    <audio id="SFX_ROW4" type="audio/mp3" src="media/sounds/SFX_ROW4.mp3" preload="auto"></audio>
+    <audio id="SFX_LVLUP_1" type="audio/mp3" src="media/sounds/SFX_LVLUP_1.mp3" preload="auto"></audio>
+    <audio id="SFX_LVLUP_2" type="audio/mp3" src="media/sounds/SFX_LVLUP_2.mp3" preload="auto"></audio>
+    <audio id="SFX_LVLUP_3" type="audio/mp3" src="media/sounds/SFX_LVLUP_3.mp3" preload="auto"></audio>
+    <audio id="SFX_LVLUP_4" type="audio/mp3" src="media/sounds/SFX_LVLUP_4.mp3" preload="auto"></audio>
+    <audio id="SFX_ENDGAME" type="audio/mp3" src="media/sounds/SFX_ENDGAME.mp3" preload="auto"></audio>
+    <audio id="SFX_PAUSE" type="audio/mp3" src="media/sounds/SFX_PAUSE.mp3" preload="auto"></audio>
+    <!--------------------------------------------------------------------------------------------->
+    <audio id="WSFX_CLICK_1" type="audio/mp3" src="media/sounds/WSFX_CLICK_1.mp3" preload="auto"></audio>
+    <audio id="WSFX_CLICK_2" type="audio/mp3" src="media/sounds/WSFX_CLICK_2.mp3" preload="auto"></audio>
+    <audio id="WSFX_CLICK_3" type="audio/mp3" src="media/sounds/WSFX_CLICK_3.mp3" preload="auto"></audio>
+    <audio id="WSFX_HOVER_1" type="audio/mp3" src="media/sounds/WSFX_HOVER_1.mp3" preload="auto"></audio>
+    <audio id="WSFX_HOVER_2" type="audio/mp3" src="media/sounds/WSFX_HOVER_2.mp3" preload="auto"></audio>
+    <audio id="WSFX_HOVER_3" type="audio/mp3" src="media/sounds/WSFX_HOVER_3.mp3" preload="auto"></audio>
+    <audio id="WSFX_RETURN" type="audio/mp3" src="media/sounds/WSFX_RETURN.mp3" preload="auto"></audio>
+
+
+    <!------------------------------------------ MELODÍAS ------------------------------------------>
+    <audio loop id="MUSIC_LVL_1" type="audio/mp3" src="media/sounds/MUSIC_LVL_1.mp3" preload="auto"></audio>
+    <audio loop id="MUSIC_LVL_2" type="audio/mp3" src="media/sounds/MUSIC_LVL_2.mp3" preload="auto"></audio>
+    <audio loop id="MUSIC_LVL_3" type="audio/mp3" src="media/sounds/MUSIC_LVL_3.mp3" preload="auto"></audio>
+    <audio loop id="MUSIC_LVL_4" type="audio/mp3" src="media/sounds/MUSIC_LVL_4.mp3" preload="auto"></audio>
+
+</head>
+<!-- <img src="img/TETRISBWT.png">-->
+<div class = "general">
+    <header class="secondary">
+        <a href="index.html">
+            <img src="img/web/TETRISBWT.png" id="title">
+        </a>
+
+        <button id="fullscreen" style="right: 10px; display: block"><i id="fscsym" class="fas fa-expand-arrows-alt"></i></button>
+    </header>
+
+
+    <div id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="letters">
+
+        <h2 id="container-up">Retro Tetris</h2>
+
+        <div id="separator"></div>
+
+        <h3 id="container-down">Inspired by retro-wave and 80's</h3>
+
+    </div>
+
+    <nav id="navigator">
+
+        <span id="nDev">Desarrollo</span>
+        <span id="nGame">Jugar</span>
+        <span id="nAuthors">Autores</span>
+
+    </nav>
+
+</div>
+
+<body>
+
+    <div class="background"> </div>
+
+    <section id="game" class="secondary">
+
+        <!------------------------------------------ SECCIÓN: LEVELER ------------------------------------------>
+
+        <div id="leveler" class="leveler">
+            <img src="img/game/level1.jpg" class="level" id="level1">
+            <img src="img/game/level2.jpg" class="level" id="level2">
+            <img src="img/game/level3.jpg" class="level" id="level3">
+            <img src="img/game/level4.jpg" class="level" id="level4">
+        </div>
+        <!------------------------------------------------------------------------------------------------------>
+        <!------------------------------------------ SECCIÓN: TETRIS ------------------------------------------>
+        <div class="tetris" id="backing_video">
+
+            <video autoplay muted loop id="myVideo">
+                <source id="selected_video" src="./media/videos/level1.m4v" type="video/mp4">
+                Tu navegador no admite videos HTML5.
+            </video>
+            <aside class="ingame_menu">
+                <button id="back" class="interactive">Volver</button>
+                <button id="music" class="interactive">Música: ON</button>
+                <button id="stop_video" class="interactive">Video: ON</button>
+            </aside>
+
+            <div class="tetris" id="Tetris1">
+
+                <div class="start_game_animation" id="addon_animation">LET'S GO!</div>
+                <div class="level_up_animation" id="addon_animation">LEVEL UP!</div>
+
+                <canvas class="canvas" id="canvas_1"></canvas>
+                <div class="canvas_title" id="canvas_2_title">NEXT</div>
+                <canvas class="canvas" id="canvas_2"></canvas>
+                <div class="canvas_title" id="canvas_3_title">HOLD</div>
+                <canvas class="canvas" id="canvas_3"></canvas>
+
+                <div class="controls_box" id="controls_box_smartphone">
+                    <button type="button" id="movUp" class="boton"> <img class="flechas"
+                            src="img/mobile/top-arrow.png"></button><br>
+                    <button type="button" id="movLeft" class="boton"> <img class="flechas"
+                            src="img/mobile/left-arrow.png"></button>
+                    <button type="button" id="movDown" class="boton"> <img class="flechas"
+                            src="img/mobile/bot-arrow.png"></button>
+                    <button type="button" id="movRight" class="boton"> <img class="flechas"
+                            src="img/mobile/right-arrow.png"></button><br>
+                    <button type="button" id="savePlayer" class="boton">
+                        <h class="bot_font">SAVE</h>
+                    </button>
+                    <button type="button" id="drop" class="boton">
+                        <h class="bot_font">DROP</h>
+                    </button>
+                    <button type="button" id="pause" class="boton">
+                        <h class="bot_font">PAUSE</h>
+                    </button>
+                    <button type="button" id="reset" class="boton">
+                        <h class="bot_font">RESET</h>
+                    </button>
+                </div>
+
+                <div class="controls_box" id="controls_box_pc"><br><br><br><br><br>NOT<br>AVAILABLE</div>
+
+                <canvas class="canvas" id="canvas_4"></canvas>
+                <progress class="score_progress" id="score_progress" max="4000"></progress>
+
+            </div>
+        </div>
+
+        <!--------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+        <!------------------------------------------ SECCIÓN: RANKING ------------------------------------------>
+        <div id="ranking" class="ranker">
+            <form action="../ranking" method="post">
+                <fieldset class="fieldset">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" /><br />
+                    <input type="hidden" name="score" id="hidInput" />
+
+
+                    <input type="submit" id="submit_rank" class="interactive" value="Enviar" />
+
+                </fieldset>
+            </form>
+        </div>
+        <!------------------------------------------ SECCIÓN: RANKING ------------------------------------------>
+
+
+
+    </section>
+
+
+    <section id="dev" class="secondary">
+        <!----Nav del dev-->
+        <div id="header_dev">
+            
+            <a class="logo" href="index.html"> <img src="img/web/TETRISBWT.png"> </a>
+            <ul>
+                <li>
+                    <h3 id="video_button">Video presentación</h3>
+                </li>
+                <li>
+                    <h3 id="controls_button">Controles</h3>
+                </li>
+                <li>
+                    <h3 id="about_us_button">Desarrollo web</h3>
+                </li>
+            </ul>
+        </div>
+
+        <!----Los diferentes apartados-->
+        <div id="video">
+            <iframe src="https://www.youtube.com/embed/IEHf9kfHkoM" width="640" height="480" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+        <div id="controls">
+            <img src="img/dev/keyboard.png" id="keyboard_controls">
+        </div>
+        <div id="about_us">
+            <p>
+                <br>
+                Óscar
+                <br><br><em>
+                En lo relativo al diseño del juego (ideas, funcionamiento, código, corrección de bugs…)
+                hemos participado todos los miembros del equipo de manera equilibrada. Con diferencia,
+                esta ha sido la parte que más tiempo nos ha llevado.
+                <br><br>
+                A parte de ello, yo me he ocupado de componer la música y diseñar los efectos de sonido
+                en Cubase (tanto para la página web como para el juego), así como de integrarlos en el
+                código usando jQuery.
+                <br><br>
+                También me he encargado de la estética del tablero: diseño general, apariencia de las
+                figuras, barra de progreso animada, efectos “Let’s Go!” / “Level Up!”, animación del
+                tablero al iniciar el juego, etc. 
+                Para que la estética de la página web fuese coherente en todos sus aspectos, todos los
+                miembros del equipo pactamos previamente el estilo que buscábamos: retro, neón y arcade.
+                <br><br>
+                Por último, he participado en algunas cuestiones menores relativas al flujo en la página
+                web, así como en la corrección de algunos errores que han ido surgiendo."
+                <br></em>
+            </p>
+
+            <p>
+                <br>
+                Dani
+                <br><br><em>
+                Por mi parte me he encargado de la adaptación del juego y la pagina a dispositivos moviles
+                para hacer la pagina Responsive Design. Así como la creacion de los botones para proporcionar
+                la jugabilidad en dispositivos moviles.
+                <br><br>
+                Para ello he tenido que variar codigo css y javascript para poder adaptar el contenido
+                de una forma optima. Para ello he usado la herramienta Media Queries para hacer la pagina
+                y el juego Responsive Design.
+                <br><br>
+                Me he encontrado multiples problemas al lidiar con la herencia, superposicion de propiedades, 
+                estructura interna de la pagina... 
+                <br><br>
+                Finalmente al igual que todos, hemos corregido errores, bugs... Y hemos puesto nuestro punto artistico
+                a la hora del diseño de la pagina web.
+                <br></em>
+            </p>
+        </div>
+
+
+       
+
+        <div id="otro_mas">
+            <p></p>
+        </div>
+
+
+    </section>
+
+    <section id="authors" class="secondary">
+        <h2>Aqui van los autores</h2>
+        <p>EN PROCESO</p>
+    </section>
+
+
+
+
+
+    <i class="fas fa-angle-double-up" id="hoverme"></i>
+</body>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="js/web/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/web/nav_interaction.js"></script>
+<script type="text/javascript" src="js/web/add-ons.js"></script>
+<script type="text/javascript" src="js/web/web_sounds.js"></script>
+<script type="text/javascript" src="js/game/sounds.js"></script>
+<script type="text/javascript" src="js/game/figure.js"></script>
+<script type="text/javascript" src="js/game/board.js"></script>
+<script type="text/javascript" src="js/game/gameplay.js"></script>
+<script type="text/javascript" src="js/game/main.js"></script>
+<script type="text/javascript" src="js/game/end_game.js"></script>
+<script type="text/javascript" src="js/development/dev.js"></script>
+<script src="https://kit.fontawesome.com/af8c1be6fd.js" crossorigin="anonymous"></script>
+
+
+</html>

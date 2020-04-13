@@ -1,0 +1,164 @@
+@media screen and (max-width:600px){
+    #Tetris1{
+        width: min-content;
+        height: max-content;
+        margin: 20px;
+        margin-top: -20%;
+    }
+
+    #title {
+        height: 50%;
+        width: 50%;
+
+    }
+
+    #controls_box_pc {
+        display: none;
+    }
+
+    #controls_box_smartphone {
+        display: block;
+    }
+
+    #navigator{
+        grid-template-columns: none;
+        
+    }
+
+    #fullscreen{
+        display: none;
+        right: -30px;
+        visibility: hidden;
+    }
+
+    #navigator span{
+        display: block;
+    }
+
+    #nGame{
+        padding:  25px 60px 25px 60px;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    #nDev{
+        padding:  25px 60px 25px 60px;
+        margin-top: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #nAuthors{
+        padding:  25px 60px 25px 60px;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #letters h3{
+        font-size: 150%;
+    }
+    canvas{
+        width: 150px;
+        margin: auto;
+        box-sizing:border-box;
+    }
+    #canvas_1{
+        width: 200px;
+        margin-top: 200px;
+    }
+    #canvas_4{
+        width: 100%;
+    }
+    
+    #back{
+        left: 5px;
+        top: 10%;
+        
+        position:absolute;
+        display: inline;
+    }
+    #music{
+        left: 5px;
+        top: 50px;
+        
+        position:absolute;
+        display: inline;
+    }
+    #stop_video{
+        left: 5px;
+        top: 100px;
+        
+        position:absolute;
+        display: inline;
+    }
+
+    #hoverme{
+        visibility: hidden;
+    }
+
+    .leveler{
+        grid-template-columns: 50% 50%;
+    }
+
+    .secondary img{
+        margin: 0px 0px 10% 0px;
+    }
+
+    #header_dev{
+        display: block;
+    } 
+
+    #header_dev ul{
+        margin-left: 17%;
+    }
+    #header_dev ul li h3{
+        margin: 0px 15px;
+    }
+
+    .boton:active {
+        border: 1px solid grey;
+    }
+    
+    #rank_img{
+        height: 100px;
+    }
+    .ranker{
+        font-size: 80%;
+    }
+
+    .ranker p{
+        margin: 20%;
+        width: 300%;
+    }   
+    
+    #toptier{
+        margin: 0 10% 0 5%;
+    }
+
+    #loading span{
+        margin-top: 350px;
+    }
+    .interactive{
+        padding: 0;
+        margin: 0;
+    }
+
+    #home iframe{
+        padding-top: 90%;
+        width: 90%;
+        height: 300px;
+    }
+
+    #instructions p{
+        
+        font-size: 35%;
+}
+
+    #instructions{
+        padding: 55% 5% 0% 5%;
+
+    }
+
+}
+

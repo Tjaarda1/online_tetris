@@ -1,0 +1,186 @@
+#video{
+    scroll-snap-align: start;
+    opacity: 0%;
+    width: 100%;
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(../../img/web/2.jpg);
+    background-position: center;
+}
+
+#video iframe{
+
+    padding-top: 200px;
+    width: 60%;
+    height: 615px;
+}
+
+#video iframe{
+
+    padding-top: 200px;
+    width: 1200px;
+    height: 615px;
+}
+
+#about_us{
+    scroll-snap-align: start;
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0),rgba(0, 0, 0, 1)), url(../../img/web/3.jpg);
+    margin-top: 200px;
+    min-height: 80vh;
+    padding: 100px;
+    background-position: center;
+    color: white;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+#about_us p{
+    margin-top: 2%;
+    font-size: 65%;
+}
+
+#controls{
+    scroll-snap-align: start;
+    display: block;
+    min-height: 80vh;
+    margin-top: 200px;
+    padding: 100px;
+    background-size: contain;
+    background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)), url(../../img/web/4.jpg);
+    
+    background-position: center,top;
+}
+
+#keyboard_controls{
+opacity: 0.7;
+}
+
+#otro_mas{
+    scroll-snap-align: start;
+    display: block;
+    min-height: 80vh;
+    margin-top: 400px;
+    padding: 100px;
+    background-size: contain;
+    background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)), url(../../img/web/5.jpg);
+    
+    background-position: center,top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.information{
+    display: block;
+    background-color: rgb(17,48,237,0.4);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #00ffff;
+    color: #ebebeb;
+    margin: 5%;
+    font-size: 6
+}
+
+.contents a{
+    position:relative;
+    font-size: xx-large;
+    font-family: sans-serif;
+    color: #f5f0f0;
+    text-decoration: none
+}
+.contents a:hover{
+
+right: 3px;
+bottom: 3px;
+border-style:inset;
+border-radius: 20%;
+border-color:#ee30da;
+
+}
+.sticky{
+    margin-left: 0;
+    margin-right: 0;
+    
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
+}
+.bar{
+    display:block;
+    background-color: #ee30da;
+    height:10px;
+    
+    width: 0%;
+}
+
+.contents{
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+
+}
